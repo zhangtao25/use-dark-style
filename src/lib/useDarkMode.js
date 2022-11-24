@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-let subscriptions: any = [];
+let subscriptions = [];
 let state = false;
 
-const setState = (newState: any) => {
+const setState = (newState) => {
   state = newState;
 
   // 逻辑
@@ -12,7 +12,7 @@ const setState = (newState: any) => {
   document.body.classList.add(newState ? classNameDark : classNameLight);
   document.body.classList.remove(newState ? classNameLight : classNameDark);
 
-  subscriptions.forEach((subscription: any) => {
+  subscriptions.forEach((subscription) => {
     subscription(state);
   });
 };
@@ -22,12 +22,12 @@ const useDarkMode = () => {
   useEffect(() => {
     subscriptions.push(newSubscription);
     return () => {
-      subscriptions = subscriptions.filter((item: any) => item !== newSubscription);
+      subscriptions = subscriptions.filter((item) => item !== newSubscription);
     };
   }, []);
   return {
     value: state,
-    toggle: (current: any) => setState(current),
+    toggle: (current) => setState(current),
   };
 };
 

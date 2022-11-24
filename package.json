@@ -1,11 +1,11 @@
 {
   "name": "use-dark-style",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
-  "main": "./src/lib/useDarkMode.ts",
+  "main": "src/lib/useDarkMode.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc",
     "preview": "vite preview"
   },
   "dependencies": {

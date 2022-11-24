@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import useDarkMode from "./lib/useDarkMode";
+import useDarkMode from "./lib/useDarkMode.js";
 
 function App() {
   const [count, setCount] = useState(0)
